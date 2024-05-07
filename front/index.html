@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Hello!</h1>
+        <input type="text" name="hoge" id="input">
+        <button type="button" onclick="displayInput()">送信</button>
+        <p id="display"></p>
+        <script>
+            fetch("http://localhost:8000")
+                .then(async res => console.log(await res.json()))
+            
+            function displayInput() {
+                var inputText = document.getElementById("input").value;
+                document.getElementById("display").innerHTML = inputText;
+            }
+        </script>
+    </body>
+</html>
